@@ -40,8 +40,8 @@
         width: 800px;
         margin: 100px auto;
         background-color: #087f5b;
-        padding: 32px;
-        padding-left: 86px;
+        padding: 32px 48px 32px 86px;
+
         border-radius: 8px;
         position: relative;
 
@@ -81,6 +81,8 @@
         width: 40px;
         border-radius: 50%;
         position: absolute;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
 
         display: flex;
         align-items: center;
@@ -88,19 +90,45 @@
       }
 
       .btn--left {
+        /* In relation to PARENT ELEMENT */
         left: 0;
         top: 50%;
-        transform: translate(0, -50%);
+
+        /* In relation to ELEMENT ITSELF */
+        transform: translate(-50%, -50%);
       }
 
       .btn--right {
         right: 0;
+        top: 50%;
+
+        transform: translate(50%, -50%);
       }
 
       .btn-icon {
         height: 24px;
         width: 24px;
         stroke: #087f5b;
+      }
+      .dots {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 32px);
+
+        display: flex;
+        gap: 12px;
+      }
+      .dot {
+        height: 12px;
+        width: 12px;
+        background-color: #fff;
+        border: 2px solid #087f5b;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .dot--fill {
+        background-color: #087f5b;
       }
     </style>
   </head>
@@ -150,6 +178,12 @@
           />
         </svg>
       </button>
+      <div class="dots">
+        <button class="dot dot--fill">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
     </div>
   </body>
 </html>
