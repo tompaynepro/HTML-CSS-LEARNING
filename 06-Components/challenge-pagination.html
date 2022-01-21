@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carousel Component</title>
+    <title>Pagination Component</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
@@ -35,7 +35,126 @@
         color: #343a40;
         line-height: 1;
       }
+
+      .pagination {
+        width: 450px;
+        margin: 200px auto;
+        display: flex;
+
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .btn {
+        background-color: #fff;
+        border: 2px solid #adb5bd;
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+      }
+
+      .btn-icon {
+        height: 24px;
+        width: 24px;
+        color: #868e96;
+      }
+
+      .btn:hover {
+        cursor: pointer;
+        background-color: #067352;
+        border: none;
+      }
+
+      .btn:hover .btn-icon {
+        stroke: #fff;
+      }
+
+      .pages {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 1 auto;
+      }
+
+      .page {
+        background-color: #fff;
+        color: #5a5f64;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+      }
+
+      .page:hover {
+        background-color: #067352;
+        color: #fff;
+      }
+
+      .pages span {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .page--open {
+        background-color: #067352;
+        color: #fff;
+      }
     </style>
   </head>
-  <body></body>
+  <body>
+    <div class="pagination">
+      <button class="btn btn--left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="btn-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
+      <div class="pages">
+        <a href="#" class="page">1</a>
+        <a href="#" class="page">2</a>
+        <a href="#" class="page page--open">3</a>
+        <a href="#" class="page">4</a>
+        <a href="#" class="page">5</a>
+        <a href="#" class="page">6</a>
+        <span>...</span>
+        <a href="#" class="page">23</a>
+      </div>
+
+      <button class="btn btn--right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="btn-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+    </div>
+  </body>
 </html>
